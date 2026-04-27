@@ -190,7 +190,7 @@ if __name__ == "__main__":
     #2d Data augmentation
     output_2d = image_2d + 'augmentation/'
     output_2d_label = label_2d + 'augmentation/'
-    if 'augmentation' not in os.listdir(image_2d):   # 文件夹名称不存在才创建
+    if 'augmentation' not in os.listdir(image_2d):   
         os.mkdir(output_2d)
     if 'augmentation' not in os.listdir(label_2d): 
         os.mkdir(output_2d_label)
