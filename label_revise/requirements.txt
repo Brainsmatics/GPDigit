@@ -1,0 +1,10 @@
+Software requirements
+3D Slicer：version4.1.1
+Jupyter Notebook
+
+Python package：
+matplotlib
+scikit-image
+SimpleITK==2.1.1.2
+opencv-python
+IPython[all]
