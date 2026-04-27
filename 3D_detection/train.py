@@ -296,7 +296,6 @@ if __name__ == '__main__':
                         if phase == 'train':
                             scaler.scale(loss).backward()
 
-                            # Gradient Check
                             valid_gradients = True
                             total_norm = 0
                             for name, param in model.named_parameters():
@@ -304,15 +303,13 @@ if __name__ == '__main__':
                                     if torch.isnan(param.grad).any() or torch.isinf(param.grad).any():
                                         valid_gradients = False
                                         break
-
                                     grad_norm = param.grad.data.norm(2).item()
                                     if grad_norm > grad_check:
                                         pass
-
                                     param_norm = param.grad.data.norm(2)
                                     total_norm += param_norm.item() ** 2
 
-                            scaler.unscale_(optimizer)
+                            # scaler.unscale_(optimizer)
 
                             if (i_batch + 1) % accumulation_steps == 0:
                                 if valid_gradients:
@@ -324,28 +321,25 @@ if __name__ == '__main__':
                                         print(f"    xy={xyz_loss.item():.4f}, wh={whl_loss.item():.4f}, "
                                               f"conf={conf_loss.item():.4f}")
 
-                                    # Gradient clipping
                                     torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=max_norm)
 
+                                    grad_valid = True
                                     for param in model.parameters():
                                         if param.grad is not None:
                                             if torch.isnan(param.grad).any() or torch.isinf(param.grad).any():
-                                                valid_gradients = False
+                                                grad_valid = False
                                                 break
 
-                                    if valid_gradients:
+                                    if grad_valid:
                                         scaler.step(optimizer)
-                                    # Update the learning rate scaler
-                                    scaler.update()
+                                        scaler.update()
+                                    else:
+                                        scaler.update()
 
-                                    optimizer.zero_grad()
+                                optimizer.zero_grad()
 
-                                    if i_batch % 10 == 0:
-                                        torch.cuda.empty_cache()
-
-                                else:
-                                    optimizer.zero_grad()
-                                    scaler.update()
+                                if i_batch % 10 == 0:
+                                    torch.cuda.empty_cache()
 
 
                          # statistics
