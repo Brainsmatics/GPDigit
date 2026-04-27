@@ -21,9 +21,9 @@ is installed along with the corresponding Jupyter Notebook extension.
 Detailed dependencies for each module can be found in the 'requirements.txt' files 
 located in the respective folders.
 
-You can also install the requirements with:
+You can also install the requirements in specific folder with:
 ```bash
-pip install -r ./requirements.txt
+pip install -r ./folder/requirements.txt
 ```
 
 
