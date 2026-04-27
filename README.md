@@ -1,6 +1,6 @@
 # GPDigit
 
-GPDigit: A Generalized Plaque Digitization Framework for Mesoscopic High-Resolution Images
+GPDigit: A Generalized Plaque Digitization Framework for Cross-Dimensional High‑Resolution Mesoscopic Neuropathological Images
 
 GPDigit is a comprehensive framework for Aβ plaque digitization, 
 designed for mesoscopic high-resolution images and supporting both 2D and 3D data. 
