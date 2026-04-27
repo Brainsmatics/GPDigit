@@ -1,5 +1,5 @@
 Software requirements
-3D Slicer：version4.1.1
+3D Slicer：version4.11
 Jupyter Notebook
 
 Python package：
