@@ -75,7 +75,6 @@ def crop_overlap(img, cut_size, overlap, output_path):
                     crop_arr = croped
                 print(crop_arr)
                 croped_img = sitk.GetImageFromArray(crop_arr)
-                # 同时做灰度矫正
                 rescalFilt = sitk.ShiftScaleImageFilter() 
                 rescalFilt.SetScale(1.2)
                 rescalFilt.SetShift(25)
