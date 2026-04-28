@@ -48,8 +48,9 @@ GPDigit/
 │   ├── train                       # Model training
 │   ├── predict_evaluation          # Prediction and evaluation
 │   ├── 3D_plaque_detection.pth     # 3D model
-│   └── ...  
-└── segmentation/                   # Plaque signal segmentation: single & blocks                             
+│   └── ...
+├── segmentation/                   # Plaque signal segmentation: single & blocks  
+└── data_mini/                      # Mini-batch data for reference                              
 ```
 
 
@@ -61,7 +62,9 @@ Parameter settings refer to the current settings of all source code.
 
 ## Data
 
-The data for this study are available from the corresponding author upon reasonable request.  
+We provide mini-batch data for users to refer to image types and label settings. 
+The data used in this study are available at http://atlas.brainsmatics.cn/PlaqueMap. 
+The complete dataset can be obtained from the corresponding author upon reasonable request.  
 
 
 
