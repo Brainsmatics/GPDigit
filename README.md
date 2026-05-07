@@ -50,7 +50,7 @@ GPDigit/
 │   ├── 3D_plaque_detection.pth     # 3D model
 │   └── ...
 ├── segmentation/                   # Plaque signal segmentation: single & blocks  
-└── data_mini/                      # Mini-batch data for reference                              
+└── data_mini/                      # Small-scale dataset for reference                              
 ```
 
 
@@ -62,7 +62,7 @@ Parameter settings refer to the current settings of all source code.
 
 ## Data
 
-We provide mini-batch data for users to refer to image types and label settings. 
+We provide small-scale dataset for users to refer to image types and label settings. 
 The data used in this study are available at http://atlas.brainsmatics.cn/PlaqueMap. 
 The complete dataset can be obtained from the corresponding author upon reasonable request.  
 
